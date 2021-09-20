@@ -25,8 +25,26 @@ assertEqual(words.length, 3);
 
   **NEW**
     
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log("✅ ✅ ✅   Assertion passed: ${actual} === ${expected}");
+  } else {
+    console.log("🛑 🛑 🛑  Assertion failed: ${actual} !== ${expected}");
+  }
+};
 
-const assertEqual = require('../assertEqual');
+const tail = function(array) {
+  let outputArray = [];
+  for (let index = 1; index < array.length; index++) {
+    const element = array[index];
+    outputArray.push(element);
+          
+  }
+  return outputArray;
+};
+
+module.exports = tail;
+
 
 const tail = function(array) {
   let outputArray = [];
